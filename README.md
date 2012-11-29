@@ -23,12 +23,13 @@ How To create a lang package ?
 A langage package is a folder in your LANG EdenPHP directory :
 
 For adding a german package
-  |- /lang/
-      |- /lang.title.xml
-      |- /lang.text.xml
-      |- /lang.error.xml
-      |- /lang.success.xml
-      | /mail/
+     
+     |- /lang/
+          |- /lang.title.xml
+          |- /lang.text.xml
+          |- /lang.error.xml
+          |- /lang.success.xml
+          | /mail/
       
 Don't forget to put those files in chmod 777.
 Open your EdenPHP-translator and your file will be automatically filled up.
