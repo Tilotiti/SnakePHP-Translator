@@ -7,7 +7,7 @@
 	{/if}
 	<center>
 		<div class="input-append">
-			<input class="span2" placeholder="Password" type="text" name="password">
+			<input class="span2" placeholder="Password" type="password" name="password">
 			<button class="btn" type="submit">Login</button>
 		</div>
 	</center>
