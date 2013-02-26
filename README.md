@@ -1,16 +1,16 @@
-EdenPHP-Translator
+SnakePHP-Translator
 ==================
 
-Create a secure and graphic interface for translating your lang package in EdenPHP
+Create a secure and graphic interface for translating your lang package in SnakePHP.
 
 Install
 =======
 
 1/ Dowload the files
 
-2/ Uplad the files on the same server as your EdenPHP project
+2/ Uplad the files on the same server as your SnakePHP project
 
-3/ Configure Apache for have an access to EdenPHP-Translator home page
+3/ Configure Apache for have an access to SnakePHP-Translator home page
 
 4/ Change the constants in config.php :
 
@@ -24,7 +24,7 @@ Install
 How To create a lang package ?
 =================================
 
-A langage package is a folder in your LANG EdenPHP directory :
+A langage package is a folder in your LANG SnakePHP directory :
 
 For adding a german package
      
@@ -37,4 +37,4 @@ For adding a german package
       
 Don't forget to put those files in chmod 777.
 
-Open your EdenPHP-translator and your file will be automatically filled up.
+Open your SnakePHP-translator and your file will be automatically filled up.
