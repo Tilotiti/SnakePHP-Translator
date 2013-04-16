@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>EdenPHP Translator - {$title}</title>
+    <title>SnakePHP Translator - {$title}</title>
     <!-- Le styles -->
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
@@ -19,7 +18,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="/">EdenPHP Translator</a>
+          <a class="brand" href="/">SnakePHP Translator</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li {if get(1) == "index"}class="active"{/if}><a href="#">Home</a></li>
