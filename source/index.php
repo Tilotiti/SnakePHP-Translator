@@ -1,5 +1,5 @@
 <?php
-$template->assign('title', 'EdenPHP Translator');
+$template->assign('title', 'SnakePHP Translator');
 
 // Available languages
 $alright = true;
