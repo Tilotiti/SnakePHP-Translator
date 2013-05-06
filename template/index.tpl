@@ -44,7 +44,7 @@
 						{if $lang@index == 0}
 							<td rowspan="{$lang@total}" style="vertical-align: middle; text-align: center;">{$file.max}</td>
 						{/if}
-						<td>{ceil($lang.progress / $file.max * 100)} %</td>
+						<td>{if $file.max > 0}{ceil($lang.progress / $file.max * 100)} %{else}100%{/if}</td>
 					</tr>
 				{else}
 					<tr class="error">

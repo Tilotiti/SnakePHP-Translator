@@ -12,7 +12,7 @@
 	</thead>
 	<tbody>
 		{foreach $listId as $id}
-			<tr>
+			<tr data-var="{$listVar[$id]}">
 				<td>{$id}</td>
 				{foreach $listLang as $lang => $data}
 					<td class="{if !$data[$id]}error{else}success{/if}" data-content="{$data[$id]}" data-lang="{$lang}">
@@ -43,6 +43,9 @@
     	<h3 id="tradFormTitle">Translate "<i></i>"</h3>
     </div>
     <div class="modal-body">
+    	<h4>Variables available</h4>
+    	<ul id="tradFormVar"></ul>
+    	<h4>Translation</h4>
     	<table class="table">
 	    	{foreach $listLang as $lang => $data}
 	    		<tr valign="top">

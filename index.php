@@ -2,6 +2,7 @@
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 include ROOT.'/config.php';
 session_start();
+date_default_timezone_set('Europe/Paris');
 include ROOT.'/include/class.smarty.php';
 
 // Autoload Function

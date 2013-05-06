@@ -3,11 +3,11 @@ $template->assign('title', 'SnakePHP Translator');
 
 // Available languages
 $alright = true;
-$dir = opendir(LANG);
+$dir = @opendir(LANG);
 $languages = array();
 $langFiles = array("error", "success", "text", "title", "mail");
 
-while ($file = readdir($dir)):
+while ($file = @readdir($dir)):
     if(is_dir(LANG.'/'.$file) && $file != '.' && $file != '..'):
     	$lang = array();
     	$lang['code'] = $file;
@@ -30,7 +30,7 @@ while ($file = readdir($dir)):
     	$languages[] = $lang;
     endif;
 endwhile;
-closedir($dir);
+@closedir($dir);
 $template->assign('languages', $languages);
 
 // Translation progress

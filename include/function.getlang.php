@@ -1,8 +1,8 @@
 <?php
 function getLang($type = false) {
 	$lang = array();
-	$dir = opendir(LANG);
-	while ($file = readdir($dir)):
+	$dir = @opendir(LANG);
+	while ($file = @readdir($dir)):
 	    if(is_dir(LANG.'/'.$file) && $file != '.' && $file != '..'):
 	    	if(!$type):
 		    	$lang[] = $file;
@@ -13,7 +13,7 @@ function getLang($type = false) {
 	    	endif;
 	    endif;
 	endwhile;
-	closedir($dir);
+	@closedir($dir);
 	
 	return $lang;
 }

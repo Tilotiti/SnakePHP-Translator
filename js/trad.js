@@ -12,8 +12,6 @@ $(function() {
 			// Define type
 			trad.type = $('h1').first().text().replace('Translate lang.', '').replace('.xml', '');
 			
-			
-			
 			// Popup
 			$('td .icon-ok').popover({
 				trigger: 'hover',
@@ -32,7 +30,6 @@ $(function() {
 				}
 			});
 			
-			
 			// Action to edit
 			trad.modal = $('#tradForm').modal({
 				show: false
@@ -40,8 +37,22 @@ $(function() {
 			
 			// Instance the trad form
 			trad.modal.on('show', function(e) {
-				var id     = $(this).data('id');
-				var parent = $(this).data('parent');
+				var id        = $(this).data('id');
+				var parent    = $(this).data('parent');
+				var variables = $(this).data('var').split('|');
+				
+				if(variables[0] == "") {
+					variables = new Array();
+				}
+								
+				if(variables.length == 0) {
+					$('#tradFormVar').html('<li>No variable</li>');
+				} else {
+					$('#tradFormVar').empty();
+					for(var i in variables) {
+						$('#tradFormVar').append('<li>'+variables[i]+'</li>');
+					}
+				}
 								
 				$("#tradFormTitle i").text(id);
 				for(var i in trad.lang) {
@@ -121,7 +132,10 @@ $(function() {
 			
 			$('a.edit').live('click', function(){
 				var id = $(this).parent().parent().find('td:first').text();
-				trad.modal.data('id', id).data('parent', $(this).parent().parent()).modal('show');
+				trad.modal.data('id', id)
+						  .data('parent', $(this).parent().parent())
+						  .data('var',    $(this).parent().parent().data('var'))
+						  .modal('show');
 				return false;
 			});
 			

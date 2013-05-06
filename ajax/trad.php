@@ -24,20 +24,21 @@ foreach($_POST['data'] as $country => $trad):
 	endif;
 	
 	$lang = array();
+	$var  = array();
 	$xml = simplexml_load_file(LANG.'/'.$country.'/lang.'.$_POST['type'].'.xml', 'SimpleXMLElement', LIBXML_NOCDATA);
     foreach($xml->lang as $line):
         $id = (string) $line['id'];
+        $var[$id]  = (string) $line['var'];
         $lang[$id] = (string) $line;
     endforeach;
     $lang[$_POST['id']] = $trad;
     
     $xml  = simplexml_load_string('<?xml version="1.0" encoding="UTF-8"?><language charset="UTF-8" code="'.$country.'"></language>');
-    
-    var_dump($lang);
-    
+        
     foreach($lang as $id => $content):
 	    $node = $xml->addChild('lang', $content);
 	    $node->addAttribute('id', $id);
+	    $node->addAttribute('var', $var[$id]);
     endforeach;
     
     $dom = new DOMDocument('1.0');
