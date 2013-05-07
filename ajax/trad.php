@@ -36,6 +36,7 @@ foreach($_POST['data'] as $country => $trad):
     $xml  = simplexml_load_string('<?xml version="1.0" encoding="UTF-8"?><language charset="UTF-8" code="'.$country.'"></language>');
         
     foreach($lang as $id => $content):
+    	    $content = str_replace('&', '&amp;', $content);
 	    $node = $xml->addChild('lang', $content);
 	    $node->addAttribute('id', $id);
 	    $node->addAttribute('var', $var[$id]);
