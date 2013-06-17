@@ -39,13 +39,19 @@ $(function() {
 			trad.modal.on('show', function(e) {
 				var id        = $(this).data('id');
 				var parent    = $(this).data('parent');
-				var variables = $(this).data('var').split('|');
-				
-				if(variables[0] == "") {
+				var variables;
+												
+				if($(this).data('var') === "") {
 					variables = new Array();
+				} else if(typeof $(this).data('var') == "object") {
+					variables = false;
+				} else {
+					 variables = $(this).data('var').split('|');
 				}
-								
-				if(variables.length == 0) {
+
+				if(!variables) {
+					$('#tradFormVar').html('<li>Empty variable : []</li>');
+				} else if(variables.length == 0) {
 					$('#tradFormVar').html('<li>No variable</li>');
 				} else {
 					$('#tradFormVar').empty();
