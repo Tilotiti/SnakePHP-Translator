@@ -50,7 +50,7 @@ $(function() {
 				}
 
 				if(!variables) {
-					$('#tradFormVar').html('<li>Empty variable : []</li>');
+					$('#tradFormVar').html('<li>[]</li>');
 				} else if(variables.length == 0) {
 					$('#tradFormVar').html('<li>No variable</li>');
 				} else {
